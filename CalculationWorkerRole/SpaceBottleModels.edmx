@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="spacebottle_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Destination">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="__createdAt" Type="datetimeoffset" Precision="3" Nullable="false" />
+          <Property Name="__updatedAt" Type="datetimeoffset" Precision="3" />
+          <Property Name="__version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="message_id" Type="nvarchar(max)" />
+          <Property Name="user_id" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="__createdAt" Type="datetimeoffset" Precision="3" Nullable="false" />
+          <Property Name="__updatedAt" Type="datetimeoffset" Precision="3" />
+          <Property Name="__version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="user_id" Type="nvarchar(max)" />
+          <Property Name="registration_id" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="__createdAt" Type="datetimeoffset" Precision="3" Nullable="false" />
+          <Property Name="__updatedAt" Type="datetimeoffset" Precision="3" />
+          <Property Name="__version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="text" Type="nvarchar(max)" />
+          <Property Name="latitude" Type="float" />
+          <Property Name="longitude" Type="float" />
+          <Property Name="user_id" Type="nvarchar(max)" />
+          <Property Name="satellite_id" Type="nvarchar(max)" />
+          <Property Name="ticket_id" Type="nvarchar(max)" />
+          <Property Name="is_anonymous" Type="bit" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="__createdAt" Type="datetimeoffset" Precision="3" Nullable="false" />
+          <Property Name="__updatedAt" Type="datetimeoffset" Precision="3" />
+          <Property Name="__version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="user_id" Type="nvarchar(max)" />
+          <Property Name="latitude" Type="float" />
+          <Property Name="longitude" Type="float" />
+        </EntityType>
+        <EntityType Name="Satellite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="__createdAt" Type="datetimeoffset" Precision="3" Nullable="false" />
+          <Property Name="__updatedAt" Type="datetimeoffset" Precision="3" />
+          <Property Name="__version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="satellite_number" Type="nvarchar(max)" />
+          <Property Name="international_designator" Type="nvarchar(max)" />
+          <Property Name="epoch_date" Type="nvarchar(max)" />
+          <Property Name="d_mean_motion" Type="nvarchar(max)" />
+          <Property Name="dd_mean_motion" Type="nvarchar(max)" />
+          <Property Name="drag_term" Type="nvarchar(max)" />
+          <Property Name="ephemeris_type" Type="nvarchar(max)" />
+          <Property Name="element_number" Type="nvarchar(max)" />
+          <Property Name="inclination" Type="nvarchar(max)" />
+          <Property Name="ascension" Type="nvarchar(max)" />
+          <Property Name="eccentricity" Type="nvarchar(max)" />
+          <Property Name="arg_of_perigee" Type="nvarchar(max)" />
+          <Property Name="mean_anomaly" Type="nvarchar(max)" />
+          <Property Name="mean_motion" Type="nvarchar(max)" />
+          <Property Name="revolution_number" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="__createdAt" Type="datetimeoffset" Precision="3" Nullable="false" />
+          <Property Name="__updatedAt" Type="datetimeoffset" Precision="3" />
+          <Property Name="__version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="user_id" Type="nvarchar(max)" />
+          <Property Name="satellite_id" Type="nvarchar(max)" />
+          <Property Name="limit" Type="datetimeoffset" Precision="3" />
+          <Property Name="is_used" Type="bit" />
+        </EntityType>
+        <EntityType Name="TodoItem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="__createdAt" Type="datetimeoffset" Precision="3" Nullable="false" />
+          <Property Name="__updatedAt" Type="datetimeoffset" Precision="3" />
+          <Property Name="__version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="text" Type="nvarchar(max)" />
+          <Property Name="complete" Type="bit" />
+          <Property Name="handle" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="spacebottle_dbModelStoreContainer">
+          <EntitySet Name="Destination" EntityType="Self.Destination" Schema="spacebottle" store:Type="Tables" />
+          <EntitySet Name="Device" EntityType="Self.Device" Schema="spacebottle" store:Type="Tables" />
+          <EntitySet Name="Message" EntityType="Self.Message" Schema="spacebottle" store:Type="Tables" />
+          <EntitySet Name="Position" EntityType="Self.Position" Schema="spacebottle" store:Type="Tables" />
+          <EntitySet Name="Satellite" EntityType="Self.Satellite" Schema="spacebottle" store:Type="Tables" />
+          <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="spacebottle" store:Type="Tables" />
+          <EntitySet Name="TodoItem" EntityType="Self.TodoItem" Schema="spacebottle" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="spacebottle_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Destination">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="C__createdAt" Type="DateTimeOffset" Nullable="false" Precision="3" />
+          <Property Name="C__updatedAt" Type="DateTimeOffset" Precision="3" />
+          <Property Name="C__version" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="message_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="user_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="C__createdAt" Type="DateTimeOffset" Nullable="false" Precision="3" />
+          <Property Name="C__updatedAt" Type="DateTimeOffset" Precision="3" />
+          <Property Name="C__version" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="user_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="registration_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="C__createdAt" Type="DateTimeOffset" Nullable="false" Precision="3" />
+          <Property Name="C__updatedAt" Type="DateTimeOffset" Precision="3" />
+          <Property Name="C__version" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="latitude" Type="Double" />
+          <Property Name="longitude" Type="Double" />
+          <Property Name="user_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="satellite_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ticket_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="is_anonymous" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="C__createdAt" Type="DateTimeOffset" Nullable="false" Precision="3" />
+          <Property Name="C__updatedAt" Type="DateTimeOffset" Precision="3" />
+          <Property Name="C__version" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="user_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="latitude" Type="Double" />
+          <Property Name="longitude" Type="Double" />
+        </EntityType>
+        <EntityType Name="Satellite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="C__createdAt" Type="DateTimeOffset" Nullable="false" Precision="3" />
+          <Property Name="C__updatedAt" Type="DateTimeOffset" Precision="3" />
+          <Property Name="C__version" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="satellite_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="international_designator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="epoch_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="d_mean_motion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dd_mean_motion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="drag_term" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ephemeris_type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="element_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="inclination" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ascension" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="eccentricity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="arg_of_perigee" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mean_anomaly" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mean_motion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="revolution_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="C__createdAt" Type="DateTimeOffset" Nullable="false" Precision="3" />
+          <Property Name="C__updatedAt" Type="DateTimeOffset" Precision="3" />
+          <Property Name="C__version" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="user_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="satellite_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="limit" Type="DateTimeOffset" Precision="3" />
+          <Property Name="is_used" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TodoItem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="C__createdAt" Type="DateTimeOffset" Nullable="false" Precision="3" />
+          <Property Name="C__updatedAt" Type="DateTimeOffset" Precision="3" />
+          <Property Name="C__version" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="complete" Type="Boolean" />
+          <Property Name="handle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="spacebottle_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Destination" EntityType="Self.Destination" />
+          <EntitySet Name="Device" EntityType="Self.Device" />
+          <EntitySet Name="Message" EntityType="Self.Message" />
+          <EntitySet Name="Position" EntityType="Self.Position" />
+          <EntitySet Name="Satellite" EntityType="Self.Satellite" />
+          <EntitySet Name="Ticket" EntityType="Self.Ticket" />
+          <EntitySet Name="TodoItem" EntityType="Self.TodoItem" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="spacebottle_dbModelStoreContainer" CdmEntityContainer="spacebottle_dbEntities">
+          <EntitySetMapping Name="Destination">
+            <EntityTypeMapping TypeName="spacebottle_dbModel.Destination">
+              <MappingFragment StoreEntitySet="Destination">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="C__createdAt" ColumnName="__createdAt" />
+                <ScalarProperty Name="C__updatedAt" ColumnName="__updatedAt" />
+                <ScalarProperty Name="C__version" ColumnName="__version" />
+                <ScalarProperty Name="message_id" ColumnName="message_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Device">
+            <EntityTypeMapping TypeName="spacebottle_dbModel.Device">
+              <MappingFragment StoreEntitySet="Device">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="C__createdAt" ColumnName="__createdAt" />
+                <ScalarProperty Name="C__updatedAt" ColumnName="__updatedAt" />
+                <ScalarProperty Name="C__version" ColumnName="__version" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="registration_id" ColumnName="registration_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Message">
+            <EntityTypeMapping TypeName="spacebottle_dbModel.Message">
+              <MappingFragment StoreEntitySet="Message">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="C__createdAt" ColumnName="__createdAt" />
+                <ScalarProperty Name="C__updatedAt" ColumnName="__updatedAt" />
+                <ScalarProperty Name="C__version" ColumnName="__version" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="satellite_id" ColumnName="satellite_id" />
+                <ScalarProperty Name="ticket_id" ColumnName="ticket_id" />
+                <ScalarProperty Name="is_anonymous" ColumnName="is_anonymous" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Position">
+            <EntityTypeMapping TypeName="spacebottle_dbModel.Position">
+              <MappingFragment StoreEntitySet="Position">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="C__createdAt" ColumnName="__createdAt" />
+                <ScalarProperty Name="C__updatedAt" ColumnName="__updatedAt" />
+                <ScalarProperty Name="C__version" ColumnName="__version" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Satellite">
+            <EntityTypeMapping TypeName="spacebottle_dbModel.Satellite">
+              <MappingFragment StoreEntitySet="Satellite">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="C__createdAt" ColumnName="__createdAt" />
+                <ScalarProperty Name="C__updatedAt" ColumnName="__updatedAt" />
+                <ScalarProperty Name="C__version" ColumnName="__version" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="satellite_number" ColumnName="satellite_number" />
+                <ScalarProperty Name="international_designator" ColumnName="international_designator" />
+                <ScalarProperty Name="epoch_date" ColumnName="epoch_date" />
+                <ScalarProperty Name="d_mean_motion" ColumnName="d_mean_motion" />
+                <ScalarProperty Name="dd_mean_motion" ColumnName="dd_mean_motion" />
+                <ScalarProperty Name="drag_term" ColumnName="drag_term" />
+                <ScalarProperty Name="ephemeris_type" ColumnName="ephemeris_type" />
+                <ScalarProperty Name="element_number" ColumnName="element_number" />
+                <ScalarProperty Name="inclination" ColumnName="inclination" />
+                <ScalarProperty Name="ascension" ColumnName="ascension" />
+                <ScalarProperty Name="eccentricity" ColumnName="eccentricity" />
+                <ScalarProperty Name="arg_of_perigee" ColumnName="arg_of_perigee" />
+                <ScalarProperty Name="mean_anomaly" ColumnName="mean_anomaly" />
+                <ScalarProperty Name="mean_motion" ColumnName="mean_motion" />
+                <ScalarProperty Name="revolution_number" ColumnName="revolution_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ticket">
+            <EntityTypeMapping TypeName="spacebottle_dbModel.Ticket">
+              <MappingFragment StoreEntitySet="Ticket">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="C__createdAt" ColumnName="__createdAt" />
+                <ScalarProperty Name="C__updatedAt" ColumnName="__updatedAt" />
+                <ScalarProperty Name="C__version" ColumnName="__version" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="satellite_id" ColumnName="satellite_id" />
+                <ScalarProperty Name="limit" ColumnName="limit" />
+                <ScalarProperty Name="is_used" ColumnName="is_used" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TodoItem">
+            <EntityTypeMapping TypeName="spacebottle_dbModel.TodoItem">
+              <MappingFragment StoreEntitySet="TodoItem">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="C__createdAt" ColumnName="__createdAt" />
+                <ScalarProperty Name="C__updatedAt" ColumnName="__updatedAt" />
+                <ScalarProperty Name="C__version" ColumnName="__version" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="complete" ColumnName="complete" />
+                <ScalarProperty Name="handle" ColumnName="handle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="なし" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
