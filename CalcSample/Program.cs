@@ -60,6 +60,8 @@ namespace CalcSample
             }
             var latitude = delta * 180 / Math.PI;
             Console.WriteLine(latitude + "," + longitude);
+            bool flag = DateTimeOffset.UtcNow.AddHours(1) - DateTimeOffset.UtcNow <= TimeSpan.FromHours(1);
+            Console.WriteLine("flag:" +flag);
             Console.ReadLine();
         }
         static double calcEccentricAnomaly(double M, double e)

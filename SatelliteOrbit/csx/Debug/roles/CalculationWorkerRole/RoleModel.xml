@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<RoleModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CalculationWorkerRole" version="2.2.6492.2" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+<RoleModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CalculationWorkerRole" version="2.3.6491.3" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
   <Startup>
     <Task commandLine="DiagnosticsAgent.exe" taskType="background" relativePath="plugins\Diagnostics">
       <Environment>
@@ -30,7 +30,7 @@
     <Property name="Configuration" value="Debug" />
     <Property name="Platform" value="AnyCPU" />
     <Property name="RoleTargetFramework" value="v4.5" />
-    <Property name="OutputDir" value="C:\Users\iwate\documents\visual studio 2013\Projects\SpaceBottle\SatelliteOrbit\obj\Debug\CalculationWorkerRole\" />
+    <Property name="OutputDir" value="C:\Users\慈行\Documents\Projects\spacebottle\SatelliteOrbit\obj\Debug\CalculationWorkerRole\" />
     <Property name="EntryPoint" value="CalculationWorkerRole.dll" />
     <Property name="SourceDir" value="" />
     <Property name="SitePhysicalPath" value="" />

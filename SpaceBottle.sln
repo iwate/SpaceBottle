@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30324.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcSample", "CalcSample\CalcSample.csproj", "{EEAB823A-5538-4558-A863-5B356DFA4805}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculationWorkerRole", "CalculationWorkerRole\CalculationWorkerRole.csproj", "{6C491CCA-7402-4EA4-970C-47E19BF66E4D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLEGetSample", "TLEGetSample\TLEGetSample.csproj", "{3E2682CB-AC48-4DD7-A78D-1CE8F5476E8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushSample", "PushSample\PushSample.csproj", "{1155BBCE-F105-4219-BC5C-64E218C75FAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{3E2682CB-AC48-4DD7-A78D-1CE8F5476E8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E2682CB-AC48-4DD7-A78D-1CE8F5476E8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E2682CB-AC48-4DD7-A78D-1CE8F5476E8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1155BBCE-F105-4219-BC5C-64E218C75FAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1155BBCE-F105-4219-BC5C-64E218C75FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1155BBCE-F105-4219-BC5C-64E218C75FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1155BBCE-F105-4219-BC5C-64E218C75FAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

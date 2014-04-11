@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ServiceConfiguration serviceName="SatelliteOrbit" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-10.2.2">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="SatelliteOrbit" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2014-01.2.3">
   <Role name="CalculationWorkerRole">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=spacebottle;AccountKey=5W50KEjpswqicbqpFIXXuBIBTonxuQC5ZKIEeKVmEmTQq7dItqe690WgaD4zECgpXUOdHHMUkpKVwQLlB/Prhg==" />
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>

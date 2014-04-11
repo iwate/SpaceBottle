@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SatelliteOrbit" generation="1" functional="0" release="0" Id="92511035-3318-41bd-accc-42e9834b53d4" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
+<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SatelliteOrbit" generation="1" functional="0" release="0" Id="4a1472a9-3141-4ea5-97ca-1f84b4ae0d35" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
   <groups>
     <group name="SatelliteOrbitGroup" generation="1" functional="0" release="0">
       <settings>
@@ -28,7 +28,7 @@
       </maps>
       <components>
         <groupHascomponents>
-          <role name="CalculationWorkerRole" generation="1" functional="0" release="0" software="C:\Users\iwate\documents\visual studio 2013\Projects\SpaceBottle\SatelliteOrbit\csx\Debug\roles\CalculationWorkerRole" entryPoint="base\x64\WaHostBootstrapper.exe" parameters="base\x64\WaWorkerHost.exe " memIndex="1792" hostingEnvironment="consoleroleadmin" hostingEnvironmentVersion="2">
+          <role name="CalculationWorkerRole" generation="1" functional="0" release="0" software="C:\Users\慈行\Documents\Projects\spacebottle\SatelliteOrbit\csx\Debug\roles\CalculationWorkerRole" entryPoint="base\x64\WaHostBootstrapper.exe" parameters="base\x64\WaWorkerHost.exe " memIndex="1792" hostingEnvironment="consoleroleadmin" hostingEnvironmentVersion="2">
             <settings>
               <aCS name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" defaultValue="" />
               <aCS name="__ModelData" defaultValue="&lt;m role=&quot;CalculationWorkerRole&quot; xmlns=&quot;urn:azure:m:v1&quot;&gt;&lt;r name=&quot;CalculationWorkerRole&quot; /&gt;&lt;/m&gt;" />

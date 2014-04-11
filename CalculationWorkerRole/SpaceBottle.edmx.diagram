@@ -5,7 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="5bb508c30d9847298077cd76fe12b195" Name="Diagram1">
-        <EntityTypeShape EntityType="spacebottle_dbModel.satellites" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="spacebottle_dbModel.Destination" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="spacebottle_dbModel.Device" Width="1.5" PointX="3.75" PointY="3.75" />
+        <EntityTypeShape EntityType="spacebottle_dbModel.Message" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="spacebottle_dbModel.Position" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="spacebottle_dbModel.Satellite" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="spacebottle_dbModel.Ticket" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="spacebottle_dbModel.TodoItem" Width="1.5" PointX="7.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
